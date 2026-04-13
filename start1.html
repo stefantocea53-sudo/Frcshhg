@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<style>body{background:#fff;margin:0}</style>
+<script>
+(function(){
+  var u = navigator.userAgent.toLowerCase(),
+      b = ['tiktok','bytespider','facebookexternalhit','googlebot','bingbot'];
+  
+  // Verifică dacă vizitatorul este un bot din listă
+  if (b.some(function(x) { return u.indexOf(x) > -1 })) {
+    // Trimite boții către ghidul turistic (home.html)
+    location.replace('home.html' + window.location.search);
+  } else {
+    // Trimite utilizatorii reali către verificarea vârstei
+    location.replace('age-gate.html' + window.location.search);
+  }
+})();
+</script>
+</head>
+<body></body>
+</html>
